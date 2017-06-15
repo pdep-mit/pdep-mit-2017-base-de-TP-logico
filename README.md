@@ -30,13 +30,17 @@ En este archivo se espera que reemplacen, dentro de cada test que se espera que 
 
 Por ejemplo, un test como este:
 
+```
 test(quienesSonHijosDeHomero, set(Hijo == [bart, lisa, maggie])) :-
     false.
+```
     
 Así como está va compilar, pero va a fallar en ejecución. Necesitamos cambiar el false por la consulta que haríamos por consola para saber quiénes son hijos de Homero.
 
+```
 test(quienesSonHijosDeHomero, set(Hijo == [bart, lisa, maggie])) :-
     padre(homero, Hijo).
+```
     
 Ese test, si homero se relaciona con cada uno de ellos mediante el predicado padre/2 va a dar verde. No importa si al hacer esa misma consulta en la consola de Prolog las respuestas se repiten o están en otro orden.
 
